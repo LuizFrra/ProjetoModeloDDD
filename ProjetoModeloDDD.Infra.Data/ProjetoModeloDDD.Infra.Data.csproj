@@ -5,8 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="EntityConfig\" />
-    <Folder Include="Repositories\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
   <ItemGroup>

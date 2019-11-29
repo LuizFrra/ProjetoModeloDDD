@@ -18,6 +18,8 @@ namespace ProjetoModeloDDD.Domain.Entities
 
         public bool Active { get; set; }
 
+        public ICollection<Product> Products { get; set; }
+
         public bool PremmiumClient(Client client)
         {
             var ticksPassed = (DateTime.Now - client.RegisterDate.AddYears(5)).Ticks;
