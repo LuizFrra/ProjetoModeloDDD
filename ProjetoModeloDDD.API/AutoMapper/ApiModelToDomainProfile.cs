@@ -12,7 +12,7 @@ namespace ProjetoModeloDDD.API.AutoMapper
     {
         public ApiModelToDomainProfile()
         {
-            CreateMap<ClientModel, Client>();
+            CreateMap<ClientModel, Client>().ForMember(p => p.ClientId, o => o.Ignore());
             CreateMap<ProductModel, Product>();
         }
     }

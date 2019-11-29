@@ -13,6 +13,11 @@ using ProjetoModeloDDD.Infra.Data.Context;
 using AutoMapper;
 using ProjetoModeloDDD.Domain.Interfaces;
 using ProjetoModeloDDD.Infra.Data.Repositories;
+using ProjetoModeloDDD.Domain.Interfaces.Repositories;
+using ProjetoModeloDDD.Domain.Interfaces.Services;
+using ProjetoModeloDDD.Domain.Services;
+using ProjetoModeloDDD.Application.Interfaces;
+using ProjetoModeloDDD.Application.AppService;
 
 namespace ProjetoModeloDDD.API
 {
@@ -29,9 +34,17 @@ namespace ProjetoModeloDDD.API
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            // INJECÇÃO DE DEPENDENCIA DE REPOSITORIO
             services.AddDbContext<ProjetoModeloContext>(options => options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
+
             services.AddScoped<IClientRepository, ClientRepository>();
+            services.AddScoped<IClientAppService, ClientAppService>();
+            services.AddScoped<IClientService, ClientService>();
+
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IProductAppService, ProductAppService>();
+            services.AddScoped<IProductService, ProductService>();
+            // FIM INJECÇÃO DE DEPENDENCIA DE REPOSITORIO
 
             services.AddAutoMapper(typeof(Startup));
 

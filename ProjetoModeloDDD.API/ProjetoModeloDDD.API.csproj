@@ -21,8 +21,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ProjetoModeloDDD.Application\ProjetoModeloDDD.Application.csproj" />
     <ProjectReference Include="..\ProjetoModeloDDD.Domain\ProjetoModeloDDD.Domain.csproj" />
-    <ProjectReference Include="..\ProjetoModeloDDD.Infra.CrossCutting\ProjetoModeloDDD.Infra.CrossCutting.csproj" />
     <ProjectReference Include="..\ProjetoModeloDDD.Infra.Data\ProjetoModeloDDD.Infra.Data.csproj" />
   </ItemGroup>
 
